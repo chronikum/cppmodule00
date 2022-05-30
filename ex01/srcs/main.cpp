@@ -41,8 +41,9 @@ int	main()
 {
 	PhoneBook	phone_book;
 	std::string command_string;
+
 	display_menu();
-	while (true)
+	while (!std::cin.eof())
 	{
 		getline(std::cin, command_string);
 		if (handle_command(command_string, &phone_book) == false)
