@@ -10,9 +10,10 @@
 class PhoneBook {
 	private:
 		Contact contact_array[8];
+		std::string	prompt_user(std::string prompt_message);
 	public:
 		Contact add(void);
-		Contact *search(std::string search_string);
+		Contact search();
 };
 
 # endif

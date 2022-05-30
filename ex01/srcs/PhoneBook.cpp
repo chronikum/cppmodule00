@@ -3,7 +3,7 @@
 /**
  *	Prompts user with message and returns the input
  */
-std::string	prompt_user(std::string prompt_message)
+std::string	PhoneBook::prompt_user(std::string prompt_message)
 {
 	std::string user_input;
 	std::cout << prompt_message;
@@ -26,7 +26,7 @@ Contact PhoneBook::add(void)
 	
 	while (first_name.length() == 0)
 	{
-		first_name = prompt_user("First name: ");
+		first_name = prompt_user("Enter first name: ");
 	}
 	while (last_name.length() == 0)
 	{
@@ -55,8 +55,14 @@ Contact PhoneBook::add(void)
 /**
  * Searches a string in the phone book
  */
-Contact *PhoneBook::search(std::string search_string)
+Contact PhoneBook::search()
 {
-	(void) search_string;
-	return NULL;
+	int index = -1;
+	index = std::stoi(prompt_user("Index: "));
+	while (index < 0 || index > 7)
+	{
+		std::cout << "Invalid index" << std::endl;
+		index = std::stoi(prompt_user("Index: "));
+	}
+	return (this->contact_array[index]);
 }

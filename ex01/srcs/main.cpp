@@ -20,7 +20,7 @@ bool	handle_command(std::string command_string, PhoneBook *phone_book)
 	}
 	else if (command_string == "SEARCH")
 	{
-		std::cout << "SEARCH a contact" << std::endl;
+		phone_book->search();
 		return (true);
 	}
 	else if (command_string == "EXIT")
@@ -30,7 +30,7 @@ bool	handle_command(std::string command_string, PhoneBook *phone_book)
 	else
 	{
 		std::cout << "Unknown command" << std::endl;
-		return (true);
+		return (false);
 	}
 	return (false);
 }
