@@ -16,11 +16,13 @@ bool	handle_command(std::string command_string, PhoneBook *phone_book)
 	if (command_string == "ADD")
 	{
 		phone_book->add();
+		std::cout << "Contact added. Press ENTER to continue." << std::endl;
 		return (true);
 	}
 	else if (command_string == "SEARCH")
 	{
 		phone_book->search();
+		std::cout << "Contact found. Press ENTER to continue." << std::endl;
 		return (true);
 	}
 	else if (command_string == "EXIT")
@@ -46,10 +48,6 @@ int	main()
 		if (handle_command(command_string, &phone_book) == false)
 		{
 			display_menu();
-		}
-		else
-		{
-			break;
 		}
 	}
 	return (0);
