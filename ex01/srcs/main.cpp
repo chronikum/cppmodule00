@@ -1,6 +1,9 @@
 #include "../incs/Contact.hpp"
 #include "../incs/PhoneBook.hpp"
 
+/**
+ * Displays the menu
+ */
 void	display_menu(void)
 {
 	std::cout << "-----------------------------" << std::endl;
@@ -11,6 +14,9 @@ void	display_menu(void)
 	std::cout << "$ ";
 }
 
+/**
+ * Handles commands fromm user input
+ */
 bool	handle_command(std::string command_string, PhoneBook *phone_book)
 {
 	if (command_string == "ADD")
