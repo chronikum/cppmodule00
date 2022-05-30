@@ -53,7 +53,7 @@ Contact PhoneBook::add(void)
 }
 
 /**
- * Searches a string in the phone book
+ * Searches a index in the phone book
  */
 Contact PhoneBook::search()
 {
