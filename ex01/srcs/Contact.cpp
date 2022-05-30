@@ -67,3 +67,9 @@ bool Contact::set_darkest_secret(std::string darkest_secret)
 	this->darkest_secret = darkest_secret;
 	return (true);
 }
+
+bool Contact::set_index(int index)
+{
+	this->index = index;
+	return (true);
+}

@@ -17,13 +17,17 @@ std::string	PhoneBook::prompt_user(std::string prompt_message)
  */
 Contact PhoneBook::add(void)
 {
+	static int	index = 0;
+	int	current_index = 0;
     Contact	new_contact;
 	std::string	first_name;
 	std::string	last_name;
 	std::string	phone_number;
 	std::string	darkest_secret;
 	std::string	nickname;
-	
+
+	index++;
+	current_index = index % 8;
 	while (first_name.length() == 0)
 	{
 		first_name = prompt_user("Enter first name: ");
@@ -42,13 +46,14 @@ Contact PhoneBook::add(void)
 	}
 	while (nickname.length() == 0)
 	{
-		nickname = prompt_user("Darkest secret: ");
+		nickname = prompt_user("Nickname: ");
 	}
 	new_contact.set_first_name(first_name);
 	new_contact.set_last_name(last_name);
 	new_contact.set_phone_number(phone_number);
 	new_contact.set_darkest_secret(darkest_secret);
 	new_contact.set_nickname(first_name + " " + last_name);
+	new_contact.set_index(current_index);
 	return (new_contact);
 }
 
