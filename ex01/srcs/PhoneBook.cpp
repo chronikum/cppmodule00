@@ -28,23 +28,23 @@ Contact PhoneBook::add(void)
 
 	index++;
 	current_index = index % 8;
-	while (first_name.length() == 0)
+	while (first_name.length() == 0 && !std::cin.eof())
 	{
 		first_name = prompt_user("Enter first name: ");
 	}
-	while (last_name.length() == 0)
+	while (last_name.length() == 0  && !std::cin.eof())
 	{
 		last_name = prompt_user("Last name: ");
 	}
-	while (phone_number.length() == 0)
+	while (phone_number.length() == 0  && !std::cin.eof())
 	{
 		phone_number = prompt_user("Phone number: ");
 	}
-	while (darkest_secret.length() == 0)
+	while (darkest_secret.length() == 0  && !std::cin.eof())
 	{
 		darkest_secret = prompt_user("Darkest secret: ");
 	}
-	while (nickname.length() == 0)
+	while (nickname.length() == 0  && !std::cin.eof())
 	{
 		nickname = prompt_user("Nickname: ");
 	}
@@ -63,11 +63,15 @@ Contact PhoneBook::add(void)
 Contact PhoneBook::search()
 {
 	int index = -1;
-	index = std::stoi(prompt_user("Index: "));
-	while (index < 0 || index > 7)
+	std::string input;
+	input = prompt_user("Index to look for (between 1 and 8):"); 
+	std::istringstream(input) >> index;
+	while ((index < 1 || index > 8) && !std::cin.eof())
 	{
 		std::cout << "Invalid index" << std::endl;
-		index = std::stoi(prompt_user("Index: "));
+		input = prompt_user("Index to look for:");
+		std::istringstream(input) >> index;
 	}
-	return (this->contact_array[index]);
+	std::cout << "Looking for index:" << index << std::endl;
+	return (this->contact_array[index - 1]);
 }

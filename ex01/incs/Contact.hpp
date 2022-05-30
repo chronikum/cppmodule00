@@ -2,6 +2,8 @@
 # define CONTACTS_H
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 /**
  * Represents a contact entry in the phone book
