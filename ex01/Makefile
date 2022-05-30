@@ -1,11 +1,11 @@
 CC = c++
 NAME = phonebook
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = PhoneBook.cpp Contact.cpp
+SRC = ./srcs/PhoneBook.cpp ./srcs/Contact.cpp ./srcs/main.cpp
 
 all: $(NAME)
 
-$(NAME): *.cpp
+$(NAME): ./srcs/*.cpp
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 dev: *.cpp
