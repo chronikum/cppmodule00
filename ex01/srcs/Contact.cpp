@@ -73,3 +73,35 @@ bool Contact::set_index(int index)
 	this->index = index;
 	return (true);
 }
+
+/**
+ *	Gets first name
+ */
+std::string Contact::get_first_name(void)
+{
+	return this->first_name;
+}
+
+/**
+ *	Gets last name
+ */
+std::string Contact::get_last_name(void)
+{
+	return this->last_name;
+}
+
+/**
+ *	Gets last name
+ */
+std::string Contact::get_nickname(void)
+{
+	return this->nickname;
+}
+
+/**
+ *	Gets last name
+ */
+std::string Contact::get_phone_number(void)
+{
+	return this->phone_number;
+}
