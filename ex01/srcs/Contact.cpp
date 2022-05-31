@@ -43,7 +43,7 @@ bool Contact::set_nickname(std::string nickname)
 	{
 		return (false);
 	}
-	this->nickname = last_name;
+	this->nickname = nickname;
 	return (true);
 }
 
