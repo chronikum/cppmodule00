@@ -17,6 +17,7 @@ class Contact {
         std::string phone_number;
         std::string darkest_secret;
     public:
+		Contact();
 		bool		set_first_name(std::string first_name);
 		bool		set_last_name(std::string first_name);
 		bool		set_phone_number(std::string first_name);

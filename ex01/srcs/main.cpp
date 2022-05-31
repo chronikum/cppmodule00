@@ -12,6 +12,7 @@ void display_column(std::string to_display)
 	while (to_display[length])
 	{
 		std::cout << to_display[length];
+		length++;
 	}
 	while (length < 10)
 	{

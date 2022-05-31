@@ -1,6 +1,14 @@
 #include "../incs/PhoneBook.hpp"
 
 /**
+ * Constructs new phone book
+ */
+PhoneBook::PhoneBook()
+{
+	
+}
+
+/**
  *	Prompts user with message and returns the input
  */
 std::string	PhoneBook::prompt_user(std::string prompt_message)
@@ -25,9 +33,7 @@ Contact PhoneBook::add(void)
 	std::string	phone_number;
 	std::string	darkest_secret;
 	std::string	nickname;
-
-	index++;
-	current_index = index % 8;
+	
 	while (first_name.length() == 0 && !std::cin.eof())
 	{
 		first_name = prompt_user("Enter first name: ");
@@ -48,12 +54,16 @@ Contact PhoneBook::add(void)
 	{
 		nickname = prompt_user("Nickname: ");
 	}
+	current_index = index % 8;
+	index++;
 	new_contact.set_first_name(first_name);
 	new_contact.set_last_name(last_name);
 	new_contact.set_phone_number(phone_number);
 	new_contact.set_darkest_secret(darkest_secret);
 	new_contact.set_nickname(first_name + " " + last_name);
 	new_contact.set_index(current_index);
+	std::cout << "New contact added: " << current_index << std::endl;
+	contact_array[current_index] = new_contact;
 	return (new_contact);
 }
 
@@ -72,6 +82,7 @@ Contact PhoneBook::search()
 		input = prompt_user("Index to look for:");
 		std::istringstream(input) >> index;
 	}
+	index--;
 	std::cout << "Looking for index:" << index << std::endl;
-	return (this->contact_array[index - 1]);
+	return (this->contact_array[index]);
 }

@@ -12,6 +12,7 @@ class PhoneBook {
 		Contact contact_array[8];
 		std::string	prompt_user(std::string prompt_message);
 	public:
+		PhoneBook();
 		Contact add(void);
 		Contact search();
 };

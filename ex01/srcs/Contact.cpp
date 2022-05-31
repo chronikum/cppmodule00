@@ -1,5 +1,11 @@
 #include "../incs/Contact.hpp"
 
+/**
+ * Constructor
+ */
+Contact::Contact() {
+	this->index = -1;
+}
 
 /**
  *	Sets first name
