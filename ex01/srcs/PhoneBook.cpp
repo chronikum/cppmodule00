@@ -1,5 +1,13 @@
 #include "../incs/PhoneBook.hpp"
 
+void	display_select_banner()
+{
+	std::cout << "         _        _   " << std::endl;
+	std::cout << "  ______| |___ __| |_ " << std::endl;
+	std::cout << " (_-/ -_| / -_/ _|  _|" << std::endl;
+	std::cout << " /__\\___|_\\___\\__|\\__|" << std::endl;
+	std::cout << "                      " << std::endl;
+}
 /**
  * Constructs new phone book
  */
@@ -74,12 +82,18 @@ Contact PhoneBook::search()
 {
 	int index = -1;
 	std::string input;
-	input = prompt_user("Index to look for (between 1 and 8):"); 
+	display_select_banner();
+	std::cout << "-----------------------------------------------" << std::endl;
+	input = prompt_user("Index to look for (between 1 and 8):");
+	std::cout << "-----------------------------------------------" << std::endl;
 	std::istringstream(input) >> index;
 	while ((index < 1 || index > 8) && !std::cin.eof())
 	{
 		std::cout << "Invalid index" << std::endl;
+		display_select_banner();
+		std::cout << "-----------------------------------------------" << std::endl;
 		input = prompt_user("Index to look for:");
+		std::cout << "-----------------------------------------------" << std::endl;
 		std::istringstream(input) >> index;
 	}
 	index--;

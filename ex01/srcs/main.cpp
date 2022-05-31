@@ -2,6 +2,18 @@
 #include "../incs/PhoneBook.hpp"
 
 /**
+ * Displays jfritz mobile banner
+ */
+void	display_welcome_banner()
+{
+	std::cout << "    _  __     _ _                  _    _ _     " << std::endl;
+	std::cout << "   (_)/ _|_ _(_| |_ ___  _ __  ___| |__(_| |___ " << std::endl;
+	std::cout << "   | |  _| '_| |  _|_ / | '  \\/ _ | '_ | | / -_)" << std::endl;
+	std::cout << "  _/ |_| |_| |_|\\__/__| |_|_|_\\___|_.__|_|_\\___|" << std::endl;
+	std::cout << " |__/                                           " << std::endl;
+}
+
+/**
  * Displays 10 characters of string character by character
  * and then displays a pipe. Fills up with spaces if shorter
  * than 10.
@@ -67,10 +79,11 @@ void	display_contact(Contact contact_to_display)
  */
 void	display_menu(void)
 {
+	display_welcome_banner();
 	std::cout << "-----------------------------------------------" << std::endl;
-	std::cout << "	ADD a contact" << std::endl;
-	std::cout << "	SEARCH a contact" << std::endl;
-	std::cout << "	EXIT the phonebook" << std::endl;
+	std::cout << "		ADD a contact" << std::endl;
+	std::cout << "		SEARCH a contact" << std::endl;
+	std::cout << "		EXIT the phonebook" << std::endl;
 	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "$ ";
 }
