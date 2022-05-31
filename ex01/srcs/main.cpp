@@ -42,7 +42,7 @@ std::string truncate_string_and_display(std::string string)
 {
 	if (string.length() == 0)
 		return "";
-	if (string.length() == 9)
+	if (string.length() > 10)
 	{
 		string[9] = '.';
 		display_column(string);
@@ -59,10 +59,10 @@ void	display_contact(Contact contact_to_display)
 {
 	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "|";
-	truncate_string_and_display("Index             ");
-	truncate_string_and_display("First name        ");
-	truncate_string_and_display("Last name         ");
-	truncate_string_and_display("Nick name         ");
+	truncate_string_and_display("Index     ");
+	truncate_string_and_display("Firstname ");
+	truncate_string_and_display("Lastname  ");
+	truncate_string_and_display("Nickname  ");
 	std::cout << std::endl;
 	std::cout << "|";
 	truncate_string_and_display(contact_to_display.get_index());
