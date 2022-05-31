@@ -2,6 +2,8 @@
 # define PHONEBOOK_H
 
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 #include "Contact.hpp"
 
 /**

@@ -20,17 +20,10 @@ void	display_welcome_banner()
  */
 void display_column(std::string to_display)
 {
-	int length = 0;
-	while (to_display[length] && length < 10)
-	{
-		std::cout << to_display[length];
-		length++;
-	}
-	while (length < 10)
-	{
-		std::cout << " ";
-		length++;
-	}
+	std::stringstream ss;
+	ss << std::setw(10) << to_display;
+	to_display = ss.str();
+	std::cout << to_display;
 	std::cout << "|";
 }
 
