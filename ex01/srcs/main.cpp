@@ -45,16 +45,20 @@ std::string truncate_string_and_display(std::string string)
  */
 void	display_contact(Contact contact_to_display)
 {
-	truncate_string_and_display("First name");
-	truncate_string_and_display("Last name");
-	truncate_string_and_display("Phone");
-	truncate_string_and_display("Nick name");
+	std::cout << "-----------------------------------------------" << std::endl;
+	std::cout << "|";
+	truncate_string_and_display("First name        ");
+	truncate_string_and_display("Last name         ");
+	truncate_string_and_display("Phone             ");
+	truncate_string_and_display("Nick name         ");
 	std::cout << std::endl;
+	std::cout << "|";
 	truncate_string_and_display(contact_to_display.get_first_name());
 	truncate_string_and_display(contact_to_display.get_last_name());
 	truncate_string_and_display(contact_to_display.get_phone_number());
 	truncate_string_and_display(contact_to_display.get_nickname());
 	std::cout << std::endl;
+	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << std::endl;
 }
 
@@ -63,11 +67,11 @@ void	display_contact(Contact contact_to_display)
  */
 void	display_menu(void)
 {
-	std::cout << "-----------------------------" << std::endl;
+	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "	ADD a contact" << std::endl;
 	std::cout << "	SEARCH a contact" << std::endl;
 	std::cout << "	EXIT the phonebook" << std::endl;
-	std::cout << "-----------------------------" << std::endl;
+	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "$ ";
 }
 

@@ -83,6 +83,5 @@ Contact PhoneBook::search()
 		std::istringstream(input) >> index;
 	}
 	index--;
-	std::cout << "Looking for index:" << index << std::endl;
 	return (this->contact_array[index]);
 }
