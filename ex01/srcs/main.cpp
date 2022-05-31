@@ -23,6 +23,7 @@ void display_column(std::string to_display)
 	std::stringstream ss;
 	ss << std::setw(10) << to_display;
 	to_display = ss.str();
+	to_display = to_display.substr(0, 10);
 	std::cout << to_display;
 	std::cout << "|";
 }
