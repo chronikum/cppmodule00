@@ -30,6 +30,7 @@ class Contact {
 		std::string	get_phone_number(void);
 		std::string	get_darkest_secret(void);
 		std::string	get_nickname(void);
+		bool		is_filled(void);
 };
 
 # endif

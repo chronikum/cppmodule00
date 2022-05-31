@@ -67,6 +67,22 @@ void	display_contact(Contact contact_to_display)
 	std::cout << std::endl;
 }
 
+
+/**
+ * Displays all saved contacts
+ */
+void	display_saved_contacts(PhoneBook *phone_book)
+{
+	int index = 0;
+	while (index < 8)
+	{
+		Contact current_contact = phone_book->contact_array[index];
+		if (current_contact.is_filled())
+			display_contact(current_contact);
+		index++;
+	}
+}
+
 /**
  * Displays the menu
  */
@@ -94,6 +110,7 @@ bool	handle_command(std::string command_string, PhoneBook *phone_book)
 	}
 	else if (command_string == "SEARCH")
 	{
+		display_saved_contacts(phone_book);
 		Contact contact_found = phone_book->search();
 		if (contact_found.get_first_name().length())
 		{

@@ -124,3 +124,11 @@ std::string Contact::get_index(void)
 	string << copyInt;
 	return string.str();
 }
+
+/**
+ *	check if contact is filled or not
+ */
+bool Contact::is_filled(void)
+{
+	return (index != -1);
+}
