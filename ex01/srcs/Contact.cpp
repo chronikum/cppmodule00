@@ -111,3 +111,16 @@ std::string Contact::get_phone_number(void)
 {
 	return this->phone_number;
 }
+
+/**
+ *	Gets last name
+ */
+std::string Contact::get_index(void)
+{
+	int copyInt;
+	std::ostringstream string;
+	copyInt = index;
+	copyInt++;
+	string << copyInt;
+	return string.str();
+}

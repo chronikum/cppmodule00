@@ -59,15 +59,15 @@ void	display_contact(Contact contact_to_display)
 {
 	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "|";
+	truncate_string_and_display("Index             ");
 	truncate_string_and_display("First name        ");
 	truncate_string_and_display("Last name         ");
-	truncate_string_and_display("Phone             ");
 	truncate_string_and_display("Nick name         ");
 	std::cout << std::endl;
 	std::cout << "|";
+	truncate_string_and_display(contact_to_display.get_index());
 	truncate_string_and_display(contact_to_display.get_first_name());
 	truncate_string_and_display(contact_to_display.get_last_name());
-	truncate_string_and_display(contact_to_display.get_phone_number());
 	truncate_string_and_display(contact_to_display.get_nickname());
 	std::cout << std::endl;
 	std::cout << "-----------------------------------------------" << std::endl;

@@ -24,6 +24,7 @@ class Contact {
 		bool		set_darkest_secret(std::string first_name);
 		bool		set_nickname(std::string first_name);
 		bool		set_index(int index);
+		std::string get_index(void);
 		std::string	get_first_name(void);
 		std::string	get_last_name(void);
 		std::string	get_phone_number(void);
