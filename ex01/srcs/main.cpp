@@ -9,7 +9,7 @@
 void display_column(std::string to_display)
 {
 	int length = 0;
-	while (to_display[length])
+	while (to_display[length] && length < 10)
 	{
 		std::cout << to_display[length];
 		length++;
@@ -36,7 +36,6 @@ std::string truncate_string_and_display(std::string string)
 		display_column(string);
 		return string;
 	}
-	string = string.substr(0,10);
 	display_column(string);
 	return string;
 }
@@ -46,10 +45,17 @@ std::string truncate_string_and_display(std::string string)
  */
 void	display_contact(Contact contact_to_display)
 {
+	truncate_string_and_display("First name");
+	truncate_string_and_display("Last name");
+	truncate_string_and_display("Phone");
+	truncate_string_and_display("Nick name");
+	std::cout << std::endl;
 	truncate_string_and_display(contact_to_display.get_first_name());
 	truncate_string_and_display(contact_to_display.get_last_name());
 	truncate_string_and_display(contact_to_display.get_phone_number());
 	truncate_string_and_display(contact_to_display.get_nickname());
+	std::cout << std::endl;
+	std::cout << std::endl;
 }
 
 /**
